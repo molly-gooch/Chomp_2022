@@ -7,6 +7,7 @@ public class MyPlayer {
     public MyPlayer() {
         columns = new int[10];
 
+
         /***
          * This code will run just once, when the game opens.
          * Add your code here.
@@ -15,11 +16,18 @@ public class MyPlayer {
 
     public Point move(Chip[][] pBoard) {
 
+
         System.out.println("MyPlayer Move");
 
         gameBoard = pBoard;
         int column = 0;
         int row = 0;
+        toColumns();
+
+
+
+
+
 
         row = 1;
         column = 1;
@@ -32,6 +40,26 @@ public class MyPlayer {
 
         Point myMove = new Point(row, column);
         return myMove;
+    }
+
+    public void toColumns(){
+        for(int x=0;x<10;x++) {
+            columns[x]=0;
+        }
+        for(int x=0;x<gameBoard.length;x++){
+            for(int y=0; y< gameBoard[x].length;y++){
+                if(gameBoard[x][y].isAlive) {
+                    System.out.println("(" + x + "," + y + ")");
+
+                    columns[y] +=1;
+
+                }
+
+            }
+        }
+        for(int x=0;x<10;x++) {
+            System.out.print(columns[x] + ",");
+        }
     }
 
 }
