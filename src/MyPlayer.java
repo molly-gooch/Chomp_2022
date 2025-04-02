@@ -1,8 +1,10 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MyPlayer {
     public Chip[][] gameBoard;
     public int[] columns;
+    ArrayList<String> boards;
 
     public MyPlayer() {
         columns = new int[10];
@@ -16,13 +18,15 @@ public class MyPlayer {
 
     public Point move(Chip[][] pBoard) {
 
-
+        System.out.println();
         System.out.println("MyPlayer Move");
 
         gameBoard = pBoard;
         int column = 0;
         int row = 0;
+
         toColumns();
+        allBoards();
 
 
 
@@ -38,8 +42,9 @@ public class MyPlayer {
          * You'll be returning a data type called Point which consists of two integers.
          */
 
-        Point myMove = new Point(row, column);
-        return myMove;
+            Point myMove = new Point(row, column);
+            return myMove;
+
     }
 
     public void toColumns(){
@@ -60,6 +65,11 @@ public class MyPlayer {
         for(int x=0;x<10;x++) {
             System.out.print(columns[x] + ",");
         }
+    }
+
+    public void allBoards(){
+
+
     }
 
 }
