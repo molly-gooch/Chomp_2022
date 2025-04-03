@@ -6,6 +6,8 @@ public class MyPlayer {
     public int[] columns;
     ArrayList<String> boards;
 
+    Boards board1 = new Boards("Board1", 3,3,0);
+
     public MyPlayer() {
         columns = new int[10];
 
