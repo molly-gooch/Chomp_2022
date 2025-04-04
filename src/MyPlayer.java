@@ -5,8 +5,11 @@ public class MyPlayer {
     public Chip[][] gameBoard;
     public int[] columns;
     ArrayList<String> boards;
+    public int a;
+    public int b;
+   public int c;
+   public  int d;
 
-    Boards board1 = new Boards("Board1", 3,3,0);
 
     public MyPlayer() {
         columns = new int[10];
@@ -70,7 +73,17 @@ public class MyPlayer {
     }
 
     public void allBoards(){
-
+         a =4;
+         b=4;;
+         c=4;
+         d=4;
+        for(int x =0; x<5;x++){
+            a-=1;
+            b-=1;
+            c-=1;
+            d-=1;
+            System.out.println(a + ", " + b + ", " + c + ", " + d);
+        }
 
     }
 
