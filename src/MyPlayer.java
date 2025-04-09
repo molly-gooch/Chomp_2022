@@ -5,10 +5,6 @@ public class MyPlayer {
     public Chip[][] gameBoard;
     public int[] columns;
     ArrayList<String> boards;
-    public int a=6;
-    public int b=6;
-   public int c=6;
-   public  int d=6;
 
 
     public MyPlayer() {
@@ -74,14 +70,13 @@ public class MyPlayer {
 
     public void allBoards(){
 
-        for(int x =0; x<5;x++){
-            a=a-1;
-            b=b-1;
-            c=c-1;
-            d=d-1;
-            System.out.println(a + ", " + b + ", " + c + ", " + d);
-        }
+        for(int a=0;a<3;a++){
+            for(int b=0;b<3;b++){
+                for(int c=0;c<3;c++){
 
+                }
+            }
+        }
     }
 
 }
