@@ -70,10 +70,12 @@ public class MyPlayer {
 
     public void allBoards(){
 
-        for(int a=0;a<3;a++){
-            for(int b=0;b<3;b++){
-                for(int c=0;c<3;c++){
-
+        for(int a=0;a<4;a++){
+            for(int b=0;b<4;b++){
+                for(int c=0;c<4;c++){
+                   if(a>=b && b>=c) {
+                       System.out.println(a + ", " + b + ", " + c);
+                   }
                 }
             }
         }
