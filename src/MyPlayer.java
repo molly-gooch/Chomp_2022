@@ -28,6 +28,7 @@ public class MyPlayer {
 
         toColumns();
         allBoards();
+        resultingBoards();
 
 
 
@@ -70,6 +71,7 @@ public class MyPlayer {
 
     public void allBoards(){
 
+        System.out.println("All 19 Boards: ");
         for(int a=0;a<4;a++){
             for(int b=0;b<4;b++){
                 for(int c=0;c<4;c++){
@@ -77,6 +79,37 @@ public class MyPlayer {
                        System.out.println(a + ", " + b + ", " + c);
                    }
                 }
+            }
+        }
+    }
+
+    public void resultingBoards(){
+        System.out.println("Resulting Boards: ");
+        for(int a=0;a<4;a++){
+            for(int b=0;b<4;b++) {
+                for (int c = 0; c < 4; c++) {
+
+                    System.out.println("Starting Board: " + a + ", " + b + ", " + c);
+                    System.out.println("Resulting Boards: ");
+
+                    int d=c;
+
+                        if (c > 0) {
+                            d = d - 1;
+                            System.out.println(a + ", " + b + ", " + d);
+                        }
+//
+//                    if (c == 0 && b > 0) {
+//                        b = b - 1;
+//                        System.out.println(a + ", " + b + ", " + c);
+//                    }
+//                    if (b == 0 && a > 1) {
+//                        a = a - 1;
+//                        System.out.println(a + ", " + b + ", " + c);
+//                    }
+
+            }
+
             }
         }
     }
