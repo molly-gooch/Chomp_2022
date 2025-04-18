@@ -70,7 +70,7 @@ public class MyPlayer {
     }
 
     public void allBoards(){
-
+        System.out.println();
         System.out.println("All 19 Boards: ");
         for(int a=0;a<4;a++){
             for(int b=0;b<4;b++){
@@ -89,24 +89,45 @@ public class MyPlayer {
             for(int b=0;b<4;b++) {
                 for (int c = 0; c < 4; c++) {
 
-                    System.out.println("Starting Board: " + a + ", " + b + ", " + c);
-                    System.out.println("Resulting Boards: ");
+                    if(a>=b && b>=c) {
+                        //System.out.println(a + ", " + b + ", " + c);
+                        System.out.println("Starting Board: " + a + ", " + b + ", " + c);
+                        System.out.println("Resulting Boards: ");
 
-                    int d=c;
+                        int d = c;
+                        int e = b;
+                        int f = a;
 
                         if (c > 0) {
                             d = d - 1;
                             System.out.println(a + ", " + b + ", " + d);
                         }
-//
-//                    if (c == 0 && b > 0) {
-//                        b = b - 1;
-//                        System.out.println(a + ", " + b + ", " + c);
-//                    }
-//                    if (b == 0 && a > 1) {
-//                        a = a - 1;
-//                        System.out.println(a + ", " + b + ", " + c);
-//                    }
+
+                        if (d < b && b > 0) {
+                            e = e - 1;
+                            System.out.println(a + ", " + e + ", " + d);
+                        }
+                        //Look at board 3,2,0 and find out how to get 3,0,0 as option
+                        if(d==e && d>0){
+                            d=d-1;
+                            e=e-1;
+                            System.out.println(a + ", " + e + ", " + d);
+                        }
+//                        if (e<a && a > 1) {
+//                            f = f - 1;
+//                            System.out.println(f + ", " + e + ", " + d);
+//                        }
+                        if(a>b){
+                            System.out.println(a-1 +", " + b + ", " + c);
+                        }
+                        if(a==b &&b>c){
+                            System.out.println((a-1) +" , " + (b-1) + ", " + c);
+                        }
+                        if(a==b&&b==c){
+                            System.out.println((a-1) +" , " + (b-1) + ", " + (c-1));
+                        }
+
+                    }
 
             }
 
