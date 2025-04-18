@@ -98,34 +98,54 @@ public class MyPlayer {
                         int e = b;
                         int f = a;
 
-                        if (c > 0) {
-                            d = d - 1;
-                            System.out.println(a + ", " + b + ", " + d);
+
+                        for(int C=c;C>0;C--) {
+                            if (c > 0) {
+                                d = d - 1;
+                                System.out.println(a + ", " + b + ", " + d);
+                            }
+                        }
+                        d=c;
+
+                        for(int B=b;B>0;B--) {
+                            if (c <= b && b > 0 && c>0) {
+                                e = e - 1;
+                                d = d - 1;
+                                System.out.println(a + ", " + e + ", " + d);
+                            }
+                        }
+                        d=c;
+                        e=b;
+
+                        for(int A=a;A>0;A--) {
+                            if (b <= a && a > 0 && b>0 && c>0) {
+                                f = f - 1;
+                                e=e-1;
+                                d=d-1;
+                                System.out.println(f + ", " + e + ", " + d);
+                            }
                         }
 
-                        if (d < b && b > 0) {
-                            e = e - 1;
-                            System.out.println(a + ", " + e + ", " + d);
-                        }
-                        //Look at board 3,2,0 and find out how to get 3,0,0 as option
-                        if(d==e && d>0){
-                            d=d-1;
-                            e=e-1;
-                            System.out.println(a + ", " + e + ", " + d);
-                        }
-//                        if (e<a && a > 1) {
-//                            f = f - 1;
-//                            System.out.println(f + ", " + e + ", " + d);
+
+//                        if(e>0){
+//                            e = e - 1;
+//                            System.out.println(a + ", " + e + ", " + d);
 //                        }
-                        if(a>b){
-                            System.out.println(a-1 +", " + b + ", " + c);
-                        }
-                        if(a==b &&b>c){
-                            System.out.println((a-1) +" , " + (b-1) + ", " + c);
-                        }
-                        if(a==b&&b==c){
-                            System.out.println((a-1) +" , " + (b-1) + ", " + (c-1));
-                        }
+                        //Look at board 3,2,0 and find out how to get 3,0,0 as option
+//                        if(d==e && d>0){
+//                            d=d-1;
+//                            e=e-1;
+//                            System.out.println(a + ", " + e + ", " + d);
+//                        }
+//                        if(a>b){
+//                            System.out.println(a-1 +", " + b + ", " + c);
+//                        }
+//                        if(a==b &&b>c){
+//                            System.out.println((a-1) +" , " + (b-1) + ", " + c);
+//                        }
+//                        if(a==b&&b==c){
+//                            System.out.println((a-1) +" , " + (b-1) + ", " + (c-1));
+//                        }
 
                     }
 
