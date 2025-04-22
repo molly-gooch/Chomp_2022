@@ -100,7 +100,7 @@ public class MyPlayer {
 
 
                         for(int C=c;C>0;C--) {
-                            if (c > 0) {
+                            if (c > 0&&d>0) {
                                 d = d - 1;
                                 System.out.println(a + ", " + b + ", " + d);
                             }
@@ -108,7 +108,7 @@ public class MyPlayer {
                         d=c;
 
                         for(int B=b;B>0;B--) {
-                            if (c <= b && b > 0 && c>0) {
+                            if (c <= b && b > 0 && c>0&& e>0&&d>0) {
                                 e = e - 1;
                                 d = d - 1;
                                 System.out.println(a + ", " + e + ", " + d);
@@ -118,7 +118,7 @@ public class MyPlayer {
                         e=b;
 
                         for(int A=a;A>0;A--) {
-                            if (b <= a && a > 0 && b>0 && c>0) {
+                            if (b <= a && a > 0 && b>0 && c>0&&e>0&&d>0&&f>0) {
                                 f = f - 1;
                                 e=e-1;
                                 d=d-1;
