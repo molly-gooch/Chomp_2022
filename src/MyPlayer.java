@@ -29,10 +29,9 @@ public class MyPlayer {
         toColumns();
         allBoards();
         resultingBoards();
-
-
-
-
+        System.out.println();
+        System.out.println();
+        //classifyBoards();
 
 
         row = 1;
@@ -44,52 +43,53 @@ public class MyPlayer {
          * You'll be returning a data type called Point which consists of two integers.
          */
 
-            Point myMove = new Point(row, column);
-            return myMove;
+        Point myMove = new Point(row, column);
+        return myMove;
 
     }
 
-    public void toColumns(){
-        for(int x=0;x<10;x++) {
-            columns[x]=0;
+    public void toColumns() {
+        for (int x = 0; x < 10; x++) {
+            columns[x] = 0;
         }
-        for(int x=0;x<gameBoard.length;x++){
-            for(int y=0; y< gameBoard[x].length;y++){
-                if(gameBoard[x][y].isAlive) {
+        for (int x = 0; x < gameBoard.length; x++) {
+            for (int y = 0; y < gameBoard[x].length; y++) {
+                if (gameBoard[x][y].isAlive) {
                     System.out.println("(" + x + "," + y + ")");
 
-                    columns[y] +=1;
+                    columns[y] += 1;
 
                 }
 
             }
         }
-        for(int x=0;x<10;x++) {
+        for (int x = 0; x < 10; x++) {
             System.out.print(columns[x] + ",");
         }
     }
 
-    public void allBoards(){
+    public void allBoards() {
         System.out.println();
         System.out.println("All 19 Boards: ");
-        for(int a=0;a<4;a++){
-            for(int b=0;b<4;b++){
-                for(int c=0;c<4;c++){
-                   if(a>=b && b>=c) {
-                       System.out.println(a + ", " + b + ", " + c);
-                   }
+        for (int a = 0; a < 4; a++) {
+            for (int b = 0; b < 4; b++) {
+                for (int c = 0; c < 4; c++) {
+                    if (a >= b && b >= c) {
+                        System.out.println(a + ", " + b + ", " + c);
+                    }
                 }
             }
         }
     }
 
-    public void resultingBoards(){
+    public void resultingBoards() {
         System.out.println("Resulting Boards: ");
-        for(int a=0;a<4;a++){
-            for(int b=0;b<4;b++) {
+        System.out.println();
+        for (int a = 0; a < 4; a++) {
+            for (int b = 0; b < 4; b++) {
                 for (int c = 0; c < 4; c++) {
 
-                    if(a>=b && b>=c) {
+                    if (a >= b && b >= c) {
                         //System.out.println(a + ", " + b + ", " + c);
                         System.out.println("Starting Board: " + a + ", " + b + ", " + c);
                         System.out.println("Resulting Boards: ");
@@ -99,60 +99,73 @@ public class MyPlayer {
                         int f = a;
 
 
-                        for(int C=c;C>0;C--) {
-                            if (c > 0&&d>0) {
+                        for (int C = c; C > 0; C--) {
+                            if (c > 0 && d > 0) {
                                 d = d - 1;
-                                System.out.println(a + ", " + b + ", " + d);
+                                Boards board = new Boards(a, b, d);
+                                board.printBoards();
+                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+                                    System.out.println("Lose Board");
+                                }
+                                // System.out.println(a + ", " + b + ", " + d);
                             }
                         }
-                        d=c;
+                        d = c;
 
-                        for(int B=b;B>0;B--) {
-                            if (c <= b && b > 0 && c>0&& e>0&&d>0) {
+                        for (int B = b; B > 0; B--) {
+                            if (c <= b && b > 0 && c >= 0 && e >= 0 && d >= 0) {
                                 e = e - 1;
-                                d = d - 1;
-                                System.out.println(a + ", " + e + ", " + d);
+                                if (e < d) {
+                                    d = d - 1;
+                                }
+                                Boards board = new Boards(a, e, d);
+                                board.printBoards();
+                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+                                    System.out.println("Lose Board");
+                                }
+                                // System.out.println(a + ", " + e + ", " + d);
                             }
                         }
-                        d=c;
-                        e=b;
+                        d = c;
+                        e = b;
 
-                        for(int A=a;A>0;A--) {
-                            if (b <= a && a > 0 && b>0 && c>0&&e>0&&d>0&&f>0) {
+                        for (int A = a; A > 0; A--) {
+                            if (b <= a && a > 0 && b >= 0 && c >= 0 && e >= 0 && d >= 0 && f > 0) {
                                 f = f - 1;
-                                e=e-1;
-                                d=d-1;
-                                System.out.println(f + ", " + e + ", " + d);
+                                if (f < e) {
+                                    e = e - 1;
+                                }
+                                if (e < d) {
+                                    d = d - 1;
+                                }
+                                Boards board = new Boards(f, e, d);
+                                board.printBoards();
+                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+                                    System.out.println("Lose Board");
+                                }
+                                //  System.out.println(f + ", " + e + ", " + d);
                             }
                         }
-
-
-//                        if(e>0){
-//                            e = e - 1;
-//                            System.out.println(a + ", " + e + ", " + d);
-//                        }
-                        //Look at board 3,2,0 and find out how to get 3,0,0 as option
-//                        if(d==e && d>0){
-//                            d=d-1;
-//                            e=e-1;
-//                            System.out.println(a + ", " + e + ", " + d);
-//                        }
-//                        if(a>b){
-//                            System.out.println(a-1 +", " + b + ", " + c);
-//                        }
-//                        if(a==b &&b>c){
-//                            System.out.println((a-1) +" , " + (b-1) + ", " + c);
-//                        }
-//                        if(a==b&&b==c){
-//                            System.out.println((a-1) +" , " + (b-1) + ", " + (c-1));
-//                        }
 
                     }
 
-            }
+                }
 
             }
         }
     }
 
+//    public void classifyBoards() {
+//        for (int a = 0; a < 4; a++) {
+//            for (int b = 0; b < 4; b++) {
+//                for (int c = 0; c < 4; c++) {
+//                    if (a >= b && b >= c) {
+//                        Boards board = new Boards(a,b,c);
+//                        board.getResultingBoards();
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

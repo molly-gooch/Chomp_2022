@@ -4,15 +4,76 @@ public class Boards {
     public int column2;
     public String name;
 
-    public Boards(String pName, int pColumn0, int pColumn1, int pColumn2){
-        name=pName;
+    public Boards(int pColumn0, int pColumn1, int pColumn2){
+
         column1=pColumn1;
         column0=pColumn0;
         column2=pColumn2;
     }
 
+    public void getResultingBoards(){
+        int a=column0;
+        int b=column1;
+        int c=column2;
+
+        if(a>=b && b>=c) {
+
+            int d = c;
+            int e = b;
+            int f = a;
+
+
+            for(int C=c;C>0;C--) {
+                if (c > 0&&d>0) {
+                    d = d - 1;
+                    Boards board = new Boards(a,b,d);
+                    board.printBoards();
+//                    if(board.column0==2&&board.column1==1&&board.column2==0){
+//                        System.out.println("Lose Board");
+//                    }
+                    // System.out.println(a + ", " + b + ", " + d);
+                }
+            }
+            d=c;
+
+            for(int B=b;B>0;B--) {
+                if (c <= b && b > 0 && c>=0&& e>=0&&d>=0) {
+                    e = e - 1;
+                    if(e<d) {
+                        d = d - 1;
+                    }
+                    Boards board = new Boards(a,e,d);
+                    board.printBoards();
+//                    if(board.column0==2&&board.column1==1&&board.column2==0){
+//                        System.out.println("Lose Board");
+//                    }
+                    // System.out.println(a + ", " + e + ", " + d);
+                }
+            }
+            d=c;
+            e=b;
+
+            for(int A=a;A>0;A--) {
+                if (b <= a && a > 0 && b>=0 && c>=0&&e>=0&&d>=0&&f>0) {
+                    f = f - 1;
+                    if(f<e) {
+                        e = e - 1;
+                    }
+                    if(e<d) {
+                        d = d - 1;
+                    }
+                    Boards board = new Boards(f,e,d);
+                    board.printBoards();
+//                    if(board.column0==2&&board.column1==1&&board.column2==0){
+//                        System.out.println("Lose Board");
+//                    }
+                    //  System.out.println(f + ", " + e + ", " + d);
+                }
+            }
+    }
+    }
+
     public void printBoards(){
-        System.out.println("Name: " + name);
         System.out.println(column0 + ", " + column1 + ", " + column2);
     }
 }
