@@ -64,9 +64,9 @@ public class Boards {
                     }
                     Boards board = new Boards(f,e,d);
                     board.printBoards();
-//                    if(board.column0==2&&board.column1==1&&board.column2==0){
-//                        System.out.println("Lose Board");
-//                    }
+                    if(board.column0==2&&board.column1==1&&board.column2==0){
+                        System.out.println("Lose Board");
+                    }
                     //  System.out.println(f + ", " + e + ", " + d);
                 }
             }

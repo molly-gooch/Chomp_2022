@@ -4,11 +4,12 @@ import java.util.ArrayList;
 public class MyPlayer {
     public Chip[][] gameBoard;
     public int[] columns;
-    ArrayList<String> boards;
+    ArrayList<Boards> boards;
 
 
     public MyPlayer() {
         columns = new int[10];
+        boards = new ArrayList<Boards>(20);
 
 
         /***
@@ -31,7 +32,7 @@ public class MyPlayer {
         resultingBoards();
         System.out.println();
         System.out.println();
-        //classifyBoards();
+        classifyBoards();
 
 
         row = 1;
@@ -75,6 +76,8 @@ public class MyPlayer {
             for (int b = 0; b < 4; b++) {
                 for (int c = 0; c < 4; c++) {
                     if (a >= b && b >= c) {
+                        Boards board = new Boards(a,b,c);
+                        boards.add(board);
                         System.out.println(a + ", " + b + ", " + c);
                     }
                 }
@@ -104,9 +107,9 @@ public class MyPlayer {
                                 d = d - 1;
                                 Boards board = new Boards(a, b, d);
                                 board.printBoards();
-                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-                                    System.out.println("Lose Board");
-                                }
+//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+//                                    System.out.println("Lose Board");
+//                                }
                                 // System.out.println(a + ", " + b + ", " + d);
                             }
                         }
@@ -120,9 +123,9 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(a, e, d);
                                 board.printBoards();
-                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-                                    System.out.println("Lose Board");
-                                }
+//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+//                                    System.out.println("Lose Board");
+//                                }
                                 // System.out.println(a + ", " + e + ", " + d);
                             }
                         }
@@ -140,9 +143,9 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(f, e, d);
                                 board.printBoards();
-                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-                                    System.out.println("Lose Board");
-                                }
+//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
+//                                    System.out.println("Lose Board");
+//                                }
                                 //  System.out.println(f + ", " + e + ", " + d);
                             }
                         }
@@ -155,17 +158,28 @@ public class MyPlayer {
         }
     }
 
-//    public void classifyBoards() {
-//        for (int a = 0; a < 4; a++) {
-//            for (int b = 0; b < 4; b++) {
-//                for (int c = 0; c < 4; c++) {
-//                    if (a >= b && b >= c) {
-//                        Boards board = new Boards(a,b,c);
-//                        board.getResultingBoards();
-//
-//                    }
-//                }
-//            }
-//        }
-//    }
+    public void classifyBoards() {
+        System.out.println("classifying: ");
+        System.out.println("Array List: ");
+        for(int x=0;x<20;x++) {
+            boards.get(x).printBoards();
+        }
+        System.out.println();
+
+        for (int a = 0; a < 4; a++) {
+            for (int b = 0; b < 4; b++) {
+                for (int c = 0; c < 4; c++) {
+                    if (a >= b && b >= c) {
+                        Boards board = new Boards(a,b,c);
+
+                        System.out.println("new board: ");
+                        board.printBoards();
+                        System.out.println();
+                        board.getResultingBoards();
+                        System.out.println();
+                    }
+                }
+            }
+        }
+    }
 }
