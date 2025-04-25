@@ -4,12 +4,16 @@ import java.util.ArrayList;
 public class MyPlayer {
     public Chip[][] gameBoard;
     public int[] columns;
-    ArrayList<Boards> boards;
+    public ArrayList<Boards> boards;
+    public ArrayList<Boards> loseBoards;
+    public ArrayList<Boards> winBoards;
 
 
     public MyPlayer() {
         columns = new int[10];
-        boards = new ArrayList<Boards>(20);
+        boards = new ArrayList<>();
+        loseBoards = new ArrayList<>();
+        winBoards = new ArrayList<>();
 
 
         /***
@@ -107,6 +111,9 @@ public class MyPlayer {
                                 d = d - 1;
                                 Boards board = new Boards(a, b, d);
                                 board.printBoards();
+                                if(board.column0 == (loseBoards.get(0).column0) && board.column1 == (loseBoards.get(0).column1) && board.column2 == (loseBoards.get(0).column2)){
+                                    winBoards.add(board);
+                                }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
 //                                    System.out.println("Lose Board");
 //                                }
@@ -123,6 +130,9 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(a, e, d);
                                 board.printBoards();
+                                if(board.column0 == (loseBoards.get(0).column0) && board.column1 == (loseBoards.get(0).column1) && board.column2 == (loseBoards.get(0).column2)){
+                                    winBoards.add(board);
+                                }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
 //                                    System.out.println("Lose Board");
 //                                }
@@ -143,6 +153,9 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(f, e, d);
                                 board.printBoards();
+                                if(board.column0 == (loseBoards.get(1).column0) && board.column1 == (loseBoards.get(1).column1) && board.column2 == (loseBoards.get(1).column2)){
+                                    winBoards.add(board);
+                                }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
 //                                    System.out.println("Lose Board");
 //                                }
@@ -161,9 +174,24 @@ public class MyPlayer {
     public void classifyBoards() {
         System.out.println("classifying: ");
         System.out.println("Array List: ");
-        for(int x=0;x<20;x++) {
+        for(int x=0;x<boards.size();x++) {
+            System.out.println(x);
             boards.get(x).printBoards();
         }
+        System.out.println();
+
+        System.out.println("Lose Boards:");
+        loseBoards.add(boards.get(1));
+        for(int x=0;x<loseBoards.size();x++) {
+            System.out.println(x);
+            loseBoards.get(x).printBoards();
+        }
+        for(int x=0;x<winBoards.size();x++) {
+            System.out.println(x);
+            winBoards.get(x).printBoards();
+        }
+
+
         System.out.println();
 
         for (int a = 0; a < 4; a++) {

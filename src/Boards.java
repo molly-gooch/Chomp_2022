@@ -1,14 +1,20 @@
+import java.util.ArrayList;
+
 public class Boards {
     public int column0;
     public int column1;
     public int column2;
     public String name;
+    public ArrayList<Boards> winBoards;
+
+
 
     public Boards(int pColumn0, int pColumn1, int pColumn2){
 
         column1=pColumn1;
         column0=pColumn0;
         column2=pColumn2;
+        winBoards = new ArrayList<>();
     }
 
     public void getResultingBoards(){
@@ -28,6 +34,7 @@ public class Boards {
                     d = d - 1;
                     Boards board = new Boards(a,b,d);
                     board.printBoards();
+
 //                    if(board.column0==2&&board.column1==1&&board.column2==0){
 //                        System.out.println("Lose Board");
 //                    }
