@@ -83,4 +83,7 @@ public class Boards {
     public void printBoards(){
         System.out.println(column0 + ", " + column1 + ", " + column2);
     }
+    public void printBoard(){
+        System.out.print(column0 + ", " + column1 + ", " + column2);
+    }
 }

@@ -7,7 +7,8 @@ public class MyPlayer {
     public ArrayList<Boards> boards;
     public ArrayList<Boards> loseBoards;
     public ArrayList<Boards> winBoards;
-    Boards board = new Boards(1,0,0);
+    //Boards board = new Boards(1,0,0);
+    public boolean saysYay;
 
 
 
@@ -16,7 +17,7 @@ public class MyPlayer {
         boards = new ArrayList<>();
         loseBoards = new ArrayList<>();
 
-        loseBoards.add(board);
+        //loseBoards.add(board);
         for(int x=0;x<loseBoards.size();x++) {
             loseBoards.get(x).printBoards();
         }
@@ -46,10 +47,17 @@ public class MyPlayer {
         System.out.println();
         //classifyBoards();
         System.out.println();
+        System.out.println("win boards: ");
         for(int x=0;x<winBoards.size();x++) {
-            System.out.println(x);
             winBoards.get(x).printBoards();
         }
+        System.out.println();
+        System.out.println("lose boards: ");
+        for(int x=0; x<loseBoards.size();x++){
+            loseBoards.get(x).printBoards();
+        }
+        System.out.println();
+        rightMove();
 
 
         row = 1;
@@ -89,7 +97,7 @@ public class MyPlayer {
     public void allBoards() {
         System.out.println();
         System.out.println("All 19 Boards: ");
-        for (int a = 0; a < 4; a++) {
+        for (int a = 1; a < 4; a++) {
             for (int b = 0; b < 4; b++) {
                 for (int c = 0; c < 4; c++) {
                     if (a >= b && b >= c) {
@@ -105,14 +113,14 @@ public class MyPlayer {
     public void resultingBoards() {
         System.out.println("Resulting Boards: ");
         System.out.println();
-        for (int a = 0; a < 4; a++) {
+        for (int a = 1; a < 4; a++) {
             for (int b = 0; b < 4; b++) {
                 for (int c = 0; c < 4; c++) {
 
                     if (a >= b && b >= c) {
                         //System.out.println(a + ", " + b + ", " + c);
                         System.out.println("Starting Board: " + a + ", " + b + ", " + c);
-                        boolean saysYay=false;
+                        saysYay=false;
                         System.out.println("Resulting Boards: ");
 
                         int d = c;
@@ -129,7 +137,6 @@ public class MyPlayer {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
                                         saysYay=true;
-                                        winBoards.add(new Boards(a, b, c));
                                     }
                                 }
 
@@ -153,7 +160,6 @@ public class MyPlayer {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
                                         saysYay=true;
-                                        winBoards.add(new Boards(a, b, c));
                                     }
                                 }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
@@ -180,7 +186,7 @@ public class MyPlayer {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
                                         saysYay=true;
-                                        winBoards.add(new Boards(a, b, c));
+
                                     }
                                 }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
@@ -189,7 +195,9 @@ public class MyPlayer {
                                 //  System.out.println(f + ", " + e + ", " + d);
                             }
                         }
-                        if(saysYay=false){
+                        if(saysYay==true){
+                            winBoards.add(new Boards(a, b, c));
+                        }else{
                             loseBoards.add(new Boards(a,b,c));
                         }
 
@@ -201,31 +209,13 @@ public class MyPlayer {
         }
     }
 
-    public void classifyBoards() {
-        System.out.println("classifying: ");
-        System.out.println("Array List: ");
-        for(int x=0;x<boards.size();x++) {
-            System.out.println(x);
-            boards.get(x).printBoards();
-        }
-        System.out.println();
+    public void rightMove(){
 
-
-        System.out.println();
-
-        for (int a = 0; a < 4; a++) {
-            for (int b = 0; b < 4; b++) {
-                for (int c = 0; c < 4; c++) {
-                    if (a >= b && b >= c) {
-                        Boards board = new Boards(a,b,c);
-
-                        System.out.println("new board: ");
-                        board.printBoards();
-                        System.out.println();
-                        board.getResultingBoards();
-                        System.out.println();
-                    }
-                }
+        for(int x=0;x<winBoards.size();x++) {
+            if(winBoards.get(x).column1>1){
+                winBoards.get(x).printBoard();
+                System.out.print("  (" + 1 + "," + 1 + ")");
+                System.out.println();
             }
         }
     }
