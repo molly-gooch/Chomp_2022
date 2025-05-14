@@ -216,7 +216,6 @@ public class MyPlayer {
                 winBoards.get(x).printBoard();
                 System.out.print("  (" + 1 + "," + 1 + ")");
                 System.out.println();
-            }
         }
     }
 }
