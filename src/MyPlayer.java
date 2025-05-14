@@ -9,7 +9,8 @@ public class MyPlayer {
     public ArrayList<Boards> winBoards;
     //Boards board = new Boards(1,0,0);
     public boolean saysYay;
-
+    public int row;
+    public int col;
 
 
     public MyPlayer() {
@@ -18,7 +19,7 @@ public class MyPlayer {
         loseBoards = new ArrayList<>();
 
         //loseBoards.add(board);
-        for(int x=0;x<loseBoards.size();x++) {
+        for (int x = 0; x < loseBoards.size(); x++) {
             loseBoards.get(x).printBoards();
         }
 
@@ -48,16 +49,16 @@ public class MyPlayer {
         //classifyBoards();
         System.out.println();
         System.out.println("win boards: ");
-        for(int x=0;x<winBoards.size();x++) {
+        for (int x = 0; x < winBoards.size(); x++) {
             winBoards.get(x).printBoards();
         }
         System.out.println();
         System.out.println("lose boards: ");
-        for(int x=0; x<loseBoards.size();x++){
+        for (int x = 0; x < loseBoards.size(); x++) {
             loseBoards.get(x).printBoards();
         }
         System.out.println();
-        rightMove();
+        //rightMove();
 
 
         row = 1;
@@ -101,7 +102,7 @@ public class MyPlayer {
             for (int b = 0; b < 4; b++) {
                 for (int c = 0; c < 4; c++) {
                     if (a >= b && b >= c) {
-                        Boards board = new Boards(a,b,c);
+                        Boards board = new Boards(a, b, c);
                         boards.add(board);
                         System.out.println(a + ", " + b + ", " + c);
                     }
@@ -120,7 +121,7 @@ public class MyPlayer {
                     if (a >= b && b >= c) {
                         //System.out.println(a + ", " + b + ", " + c);
                         System.out.println("Starting Board: " + a + ", " + b + ", " + c);
-                        saysYay=false;
+                        saysYay = false;
                         System.out.println("Resulting Boards: ");
 
                         int d = c;
@@ -133,10 +134,25 @@ public class MyPlayer {
                                 d = d - 1;
                                 Boards board = new Boards(a, b, d);
                                 board.printBoards();
-                                for(int x=0;x<loseBoards.size();x++) {
+                                for (int x = 0; x < loseBoards.size(); x++) {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
-                                        saysYay=true;
+                                        saysYay = true;
+                                        Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2);
+                                        System.out.println("sub =");
+                                        subBoard.printBoards();
+                                        if(subBoard.column0>0){
+                                            col = 0;
+                                            row = board.column0;
+                                        }else if(subBoard.column0==0 && subBoard.column1>0){
+                                            col = 1;
+                                            row = board.column1;
+                                        }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                            col = 2;
+                                            row = board.column2;
+                                        }
+                                        System.out.println("move: (" +col + "," + row + ")");
+
                                     }
                                 }
 
@@ -156,10 +172,25 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(a, e, d);
                                 board.printBoards();
-                                for(int x=0;x<loseBoards.size();x++) {
+                                for (int x = 0; x < loseBoards.size(); x++) {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
-                                        saysYay=true;
+                                        saysYay = true;
+                                        Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2);
+                                        System.out.println("sub =");
+                                        subBoard.printBoards();
+                                        if(subBoard.column0>0){
+                                            col = 0;
+                                            row = board.column0;
+                                        }else if(subBoard.column0==0 && subBoard.column1>0){
+                                            col = 1;
+                                            row = board.column1;
+                                        }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                            col = 2;
+                                            row = board.column2;
+                                        }
+                                        System.out.println("move: (" +col + "," + row + ")");
+
                                     }
                                 }
 //                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
@@ -182,40 +213,40 @@ public class MyPlayer {
                                 }
                                 Boards board = new Boards(f, e, d);
                                 board.printBoards();
-                                for(int x=0;x<loseBoards.size();x++) {
+                                for (int x = 0; x < loseBoards.size(); x++) {
                                     if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
                                         System.out.println("yay!");
-                                        saysYay=true;
-
+                                        saysYay = true;
+                                        Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2);
+                                        System.out.println("sub =");
+                                        subBoard.printBoards();
+                                        if(subBoard.column0>0){
+                                            col = 0;
+                                            row = board.column0;
+                                        }else if(subBoard.column0==0 && subBoard.column1>0){
+                                            col = 1;
+                                            row = board.column1;
+                                        }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                            col = 2;
+                                            row = board.column2;
+                                        }
+                                        System.out.println("move: (" +col + "," + row + ")");
                                     }
                                 }
-//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-//                                    System.out.println("Lose Board");
-//                                }
-                                //  System.out.println(f + ", " + e + ", " + d);
+//
                             }
+
                         }
-                        if(saysYay==true){
+                        if (saysYay == true) {
                             winBoards.add(new Boards(a, b, c));
-                        }else{
-                            loseBoards.add(new Boards(a,b,c));
+                        } else {
+                            loseBoards.add(new Boards(a, b, c));
                         }
 
                     }
 
                 }
-
             }
-        }
-    }
-
-    public void rightMove(){
-
-        for(int x=0;x<winBoards.size();x++) {
-            if(winBoards.get(x).column1>1){
-                winBoards.get(x).printBoard();
-                System.out.print("  (" + 1 + "," + 1 + ")");
-                System.out.println();
         }
     }
 }
