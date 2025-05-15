@@ -155,11 +155,6 @@ public class MyPlayer {
 
                                     }
                                 }
-
-//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-//                                    System.out.println("Lose Board");
-//                                }
-                                // System.out.println(a + ", " + b + ", " + d);
                             }
                         }
                         d = c;
@@ -242,6 +237,11 @@ public class MyPlayer {
                         } else {
                             loseBoards.add(new Boards(a, b, c));
                         }
+
+                        System.out.println();
+                        new Boards(a,b,c).printBoard();
+                        System.out.print("(" + col + "," + row + ")");
+                        System.out.println();
 
                     }
 
