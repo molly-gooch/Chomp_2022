@@ -4,13 +4,16 @@ public class Boards {
     public int column0;
     public int column1;
     public int column2;
+    public int row;
+    public int col;
     public String name;
     public ArrayList<Boards> winBoards;
 
 
 
-    public Boards(int pColumn0, int pColumn1, int pColumn2){
-
+    public Boards(int pColumn0, int pColumn1, int pColumn2, int pRow, int pCol){
+        row = pRow;
+        col = pCol;
         column1=pColumn1;
         column0=pColumn0;
         column2=pColumn2;
@@ -32,7 +35,7 @@ public class Boards {
             for(int C=c;C>0;C--) {
                 if (c > 0&&d>0) {
                     d = d - 1;
-                    Boards board = new Boards(a,b,d);
+                    Boards board = new Boards(a,b,d,0,0);
                     board.printBoards();
 
 //                    if(board.column0==2&&board.column1==1&&board.column2==0){
@@ -49,7 +52,7 @@ public class Boards {
                     if(e<d) {
                         d = d - 1;
                     }
-                    Boards board = new Boards(a,e,d);
+                    Boards board = new Boards(a,e,d,0,0);
                     board.printBoards();
 //                    if(board.column0==2&&board.column1==1&&board.column2==0){
 //                        System.out.println("Lose Board");
@@ -69,12 +72,12 @@ public class Boards {
                     if(e<d) {
                         d = d - 1;
                     }
-                    Boards board = new Boards(f,e,d);
+                    Boards board = new Boards(f,e,d,0,0);
                     board.printBoards();
                     if(board.column0==2&&board.column1==1&&board.column2==0){
                         System.out.println("Lose Board");
                     }
-                    //  System.out.println(f + ", " + e + ", " + d);
+
                 }
             }
     }
@@ -85,5 +88,8 @@ public class Boards {
     }
     public void printBoard(){
         System.out.print(column0 + ", " + column1 + ", " + column2);
+    }
+    public void printBoardMove(){
+        System.out.println(column0 + ", " + column1 + ", " + column2 + " right move: (" +col + "," + row + ")" );
     }
 }
