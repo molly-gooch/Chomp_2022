@@ -4,6 +4,13 @@ public class Boards {
     public int column0;
     public int column1;
     public int column2;
+    public int column3;
+    public int column4;
+    public int column5;
+    public int column6;
+    public int column7;
+    public int column8;
+    public int column9;
     public int row;
     public int col;
     public String name;
@@ -11,12 +18,19 @@ public class Boards {
 
 
 
-    public Boards(int pColumn0, int pColumn1, int pColumn2, int pRow, int pCol){
+    public Boards(int pColumn0, int pColumn1, int pColumn2, int pColumn3, int pColumn4, int pColumn5, int pColumn6, int pColumn7, int pColumn8, int pColumn9,int pRow, int pCol){
         row = pRow;
         col = pCol;
         column1=pColumn1;
         column0=pColumn0;
         column2=pColumn2;
+        column3 = pColumn3;
+        column4 = pColumn4;
+        column5 = pColumn5;
+        column6 = pColumn6;
+        column7 = pColumn7;
+        column8 = pColumn8;
+        column9 = pColumn9;
         winBoards = new ArrayList<>();
     }
 
