@@ -32,18 +32,7 @@ public class MyPlayer {
          * This code will run just once, when the game opens.
          * Add your code here.
          */
-    }
 
-    public Point move(Chip[][] pBoard) {
-
-        System.out.println();
-        System.out.println("MyPlayer Move");
-
-        gameBoard = pBoard;
-        int column = 0;
-        int row = 0;
-
-        toColumns();
         allBoards();
         resultingBoards();
         System.out.println();
@@ -61,10 +50,33 @@ public class MyPlayer {
         }
         System.out.println();
         boardWithRightMove();
+        System.out.println();
+
+    }
+
+    public Point move(Chip[][] pBoard) {
+
+        System.out.println();
+        System.out.println("MyPlayer Move");
 
 
-        row = 1;
-        column = 1;
+        gameBoard = pBoard;
+        int column = 0;
+        int row = 0;
+        toColumns();
+
+        for(int x=0;x<withMoves.size();x++) {
+            if (columns[0] == withMoves.get(x).column0 && columns[1]==withMoves.get(x).column1&& columns[2]==withMoves.get(x).column2) {
+                withMoves.get(x).printBoardMove();
+                row=withMoves.get(x).row;
+                column = withMoves.get(x).col;
+            }
+        }
+
+
+
+//        row = 1;
+//        column = 1;
 
         /***
          * This code will run each time the "MyPlayer" button is pressed.
@@ -84,7 +96,7 @@ public class MyPlayer {
         for (int x = 0; x < gameBoard.length; x++) {
             for (int y = 0; y < gameBoard[x].length; y++) {
                 if (gameBoard[x][y].isAlive) {
-                    System.out.println("(" + x + "," + y + ")");
+                  System.out.println("(" + x + "," + y + ")");
 
                     columns[y] += 1;
 
