@@ -155,21 +155,563 @@ public class MyPlayer {
                                                     saysYay = false;
                                                     System.out.println("Resulting Boards: ");
 
-                                                    int w = c;
-                                                    int e = b;
-                                                    int f = a;
 
+
+                                                    int z = a;
+                                                    int y = b;
+                                                    int w = c;
+                                                    int v = d;
+                                                    int u = e;
+                                                    int t = f;
+                                                    int s = g;
+                                                    int r = h;
+                                                    int q = i;
+                                                    int p = j;
+
+
+                                                    for (int P = j; P > 0; P--) {
+                                                        if (j > 0 && p > 0) {
+                                                            p = p - 1;
+                                                            Boards board = new Boards(a, b, c,d,e,f,g,h,i,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                        System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    p= j;
+
+                                                    for (int I = i; I > 0; I--) {
+                                                        if (j <= i && i > 0 && j >= 0 && q >= 0 && p >= 0) {
+                                                            q = q - 1;
+                                                            if (q < p) {
+                                                                p = p - 1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,d,e,f,g,h,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+                                                    }
+                                                    p = j;
+                                                    q = i;
+
+                                                    for (int H = h; H > 0; H--) {
+                                                        if (i <= h && h > 0 && i >= 0 && j >= 0 && q >= 0 && p >= 0 && r > 0) {
+                                                            r = r - 1;
+                                                            if (r < q) {
+                                                                q = q - 1;
+                                                            }
+                                                            if (q < p) {
+                                                                p = p - 1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,d,e,f,g,r,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+
+                                                    }
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+
+                                                    for (int G = g; G > 0; G--) {
+                                                        if (h <= g && g > 0 && h >= 0 && j >= 0 && q >= 0 && p >= 0 && r >= 0 && s>0) {
+                                                            s = s - 1;
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if (r < q) {
+                                                                q = q - 1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,d,e,f,s,r,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+
+                                                    }
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+
+                                                    for (int F = f; F > 0; F--) {
+                                                        if (g <= f && g > 0 && j >= 0 && i>0 && h>0 && g>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>0) {
+                                                            t = t - 1;
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,d,e,t,s,r,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+
+                                                    }
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+                                                    t=f;
+
+                                                    for (int E = e; E > 0; E--) {
+                                                        if (f <= e && j > 0 && i>0 && h>0 && g>0 &&f>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>0) {
+                                                            u = u - 1;
+                                                            if(u<t){
+                                                                t=t-1;
+                                                            }
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,d,u,t,s,r,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+
+                                                    }
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+                                                    t=f;
+                                                    u =e;
+
+                                                    for (int D = d; D > 0; D--) {
+                                                        if (e <= d && j > 0 && i>0 && h>0 && g>0 && f>0 &&f>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>0) {
+                                                            v = v - 1;
+                                                            if(v<u){
+                                                                u=u-1;
+                                                            }
+                                                            if(u<t){
+                                                                t=t-1;
+                                                            }
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,b,c,v,u,t,s,r,q,p,0,0);
+                                                            board.printBoards();
+                                                            for (int x = 0; x < loseBoards.size(); x++) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
+                                                                    System.out.println("yay!");
+                                                                    saysYay = true;
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
+                                                                    System.out.println("sub =");
+                                                                    subBoard.printBoards();
+                                                                    if(subBoard.column0>0){
+                                                                        col = 0;
+                                                                        row = board.column0;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1>0){
+                                                                        col = 1;
+                                                                        row = board.column1;
+                                                                    }else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2>0){
+                                                                        col = 2;
+                                                                        row = board.column2;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
+                                                                    System.out.println("move: (" +col + "," + row + ")");
+
+                                                                }
+                                                            }
+//
+                                                        }
+
+                                                    }
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+                                                    t=f;
+                                                    u =e;
+                                                    v=d;
 
                                                     for (int C = c; C > 0; C--) {
-                                                        if (c > 0 && w > 0) {
+                                                        if (d <= c && j > 0 && i>0 && h>0 && g>0 && f>0 && e>0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>0) {
                                                             w = w - 1;
-                                                            Boards board = new Boards(a, b, w,0,0);
+                                                            if(w<v){
+                                                                v=v-1;
+                                                            }
+                                                            if(v<u){
+                                                                u=u-1;
+                                                            }
+                                                            if(u<t){
+                                                                t=t-1;
+                                                            }
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,b,w,v,u,t,s,r,q,p,0,0);
                                                             board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
-                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     System.out.println("yay!");
                                                                     saysYay = true;
-                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,0,0);
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
                                                                     System.out.println("sub =");
                                                                     subBoard.printBoards();
                                                                     if(subBoard.column0>0){
@@ -182,27 +724,87 @@ public class MyPlayer {
                                                                         col = 2;
                                                                         row = board.column2;
                                                                     }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
                                                                     System.out.println("move: (" +col + "," + row + ")");
 
                                                                 }
                                                             }
+//
                                                         }
+
                                                     }
-                                                    d = c;
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+                                                    t=f;
+                                                    u =e;
+                                                    v=d;
+                                                    w=c;
 
                                                     for (int B = b; B > 0; B--) {
-                                                        if (c <= b && b > 0 && c >= 0 && e >= 0 && w >= 0) {
-                                                            e = e - 1;
-                                                            if (e < w) {
-                                                                w = w - 1;
+                                                        if (c <= b && j > 0 && i>0 && h>0 && g>0 && f>0 && e>0 && d>0&& q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>=0 && y>0) {
+                                                            y = y - 1;
+                                                            if(y<w){
+                                                                w=w-1;
                                                             }
-                                                            Boards board = new Boards(a, e, w,0,0);
+                                                            if(w<v){
+                                                                v=v-1;
+                                                            }
+                                                            if(v<u){
+                                                                u=u-1;
+                                                            }
+                                                            if(u<t){
+                                                                t=t-1;
+                                                            }
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(a,y,w,v,u,t,s,r,q,p,0,0);
                                                             board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
-                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     System.out.println("yay!");
                                                                     saysYay = true;
-                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,0,0);
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
                                                                     System.out.println("sub =");
                                                                     subBoard.printBoards();
                                                                     if(subBoard.column0>0){
@@ -215,35 +817,91 @@ public class MyPlayer {
                                                                         col = 2;
                                                                         row = board.column2;
                                                                     }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
                                                                     System.out.println("move: (" +col + "," + row + ")");
 
                                                                 }
                                                             }
-//                                if (board.column0 == 2 && board.column1 == 1 && board.column2 == 0) {
-//                                    System.out.println("Lose Board");
-//                                }
-                                                            // System.out.println(a + ", " + e + ", " + d);
+//
                                                         }
+
                                                     }
-                                                    d = c;
-                                                    e = b;
+
+                                                    p = j;
+                                                    q = i;
+                                                    r=h;
+                                                    s=g;
+                                                    t=f;
+                                                    u =e;
+                                                    v=d;
+                                                    w=c;
+                                                    y=b;
 
                                                     for (int A = a; A > 0; A--) {
-                                                        if (b <= a && a > 0 && b >= 0 && c >= 0 && e >= 0 && w >= 0 && f > 0) {
-                                                            f = f - 1;
-                                                            if (f < e) {
-                                                                e = e - 1;
+                                                        if (b <= a && j > 0 && i>0 && h>0 && g>0 && f>0 && e>0 && d>0&& c>0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>=0 && y>=0 && z>0) {
+                                                            z = z - 1;
+                                                            if(z<y){
+                                                                y=y-1;
                                                             }
-                                                            if (e < w) {
-                                                                w = w - 1;
+                                                            if(y<w){
+                                                                w=w-1;
                                                             }
-                                                            Boards board = new Boards(f, e, w,0,0);
+                                                            if(w<v){
+                                                                v=v-1;
+                                                            }
+                                                            if(v<u){
+                                                                u=u-1;
+                                                            }
+                                                            if(u<t){
+                                                                t=t-1;
+                                                            }
+                                                            if (t < s) {
+                                                                s = s - 1;
+                                                            }
+                                                            if (s < r) {
+                                                                r = r - 1;
+                                                            }
+                                                            if(r<q){
+                                                                q=q-1;
+                                                            }
+                                                            if(q<p){
+                                                                p=p-1;
+                                                            }
+                                                            Boards board = new Boards(z,y,w,v,u,t,s,r,q,p,0,0);
                                                             board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
-                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2)) {
+                                                                if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     System.out.println("yay!");
                                                                     saysYay = true;
-                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,0,0);
+                                                                    Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
                                                                     System.out.println("sub =");
                                                                     subBoard.printBoards();
                                                                     if(subBoard.column0>0){
@@ -256,7 +914,37 @@ public class MyPlayer {
                                                                         col = 2;
                                                                         row = board.column2;
                                                                     }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3>0){
+                                                                        col = 3;
+                                                                        row = board.column3;
+                                                                    }
+                                                                    else if(subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4>0){
+                                                                        col = 4;
+                                                                        row = board.column4;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5>0){
+                                                                        col = 5;
+                                                                        row = subBoard.column5;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6>0) {
+                                                                        col = 6;
+                                                                        row = subBoard.column6;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7>0) {
+                                                                        col = 7;
+                                                                        row = subBoard.column7;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8>0) {
+                                                                        col = 8;
+                                                                        row = subBoard.column8;
+                                                                    }
+                                                                    else if (subBoard.column0==0 && subBoard.column1==0 && subBoard.column2==0 && subBoard.column3==0 && subBoard.column4==0 && subBoard.column5==0 && subBoard.column6==0 && subBoard.column7==0 && subBoard.column8==0 && subBoard.column9>0) {
+                                                                        col = 9;
+                                                                        row = subBoard.column9;
+                                                                    }
+
                                                                     System.out.println("move: (" +col + "," + row + ")");
+
                                                                 }
                                                             }
 //
@@ -264,10 +952,10 @@ public class MyPlayer {
 
                                                     }
                                                     if (saysYay == true) {
-                                                        Boards b1= new Boards(a,b,c,row,col);
+                                                        Boards b1= new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                         winBoards.add(b1);
                                                     } else {
-                                                        Boards b1 = new Boards(a,b,c,row,col);
+                                                        Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                         loseBoards.add(b1);
                                                     }
 
@@ -277,7 +965,7 @@ public class MyPlayer {
                                                     withMoves.add(startingBoard);
 
                                                     System.out.println();
-                                                    Boards b1 = new Boards(a,b,c,row,col);
+                                                    Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                     b1.printBoardMove();
                                                     System.out.print(" (" + col + "," + row + ")");
                                                     System.out.println();
