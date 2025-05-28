@@ -10,6 +10,7 @@ public class Boards {
     public int column6;
     public int column7;
     public int column8;
+    public boolean win;
     public int column9;
     public int row;
     public int col;
@@ -98,12 +99,12 @@ public class Boards {
 //    }
 
     public void printBoards(){
-        System.out.println(column0 + ", " + column1 + ", " + column2 + ", " + column3 + ", " + column4 + ", " + column6 + ", " + column6+ ", " + column7 + ", " + column8+ ", " + column9);
+        System.out.println("win? " +win+ " " + column0 + ", " + column1 + ", " + column2 + ", " + column3 + ", " + column4 + ", " + column6 + ", " + column6+ ", " + column7 + ", " + column8+ ", " + column9);
     }
     public void printBoard(){
         System.out.print(column0 + ", " + column1 + ", " + column2 + ", " + column3 + ", " + column4 + ", " + column6 + ", " + column6+ ", " + column7 + ", " + column8+ ", " + column9);
     }
     public void printBoardMove(){
-        System.out.println(column0 + ", " + column1 + ", " + column2 + ", " + column3 + ", " + column4 + ", " + column6 + ", " + column6+ ", " + column7 + ", " + column8+ ", " + column9 + " right move: (" +col + "," + row + ")" );
+        System.out.println("win? " +win+ " " + column0 + ", " + column1 + ", " + column2 + ", " + column3 + ", " + column4 + ", " + column6 + ", " + column6+ ", " + column7 + ", " + column8+ ", " + column9 + " right move: (" +col + "," + row + ")" );
     }
 }
