@@ -20,7 +20,7 @@ public class MyPlayer {
         loseBoards = new ArrayList<>();
         withMoves = new ArrayList<>();
 
-        //loseBoards.add(board);
+        loseBoards.add(new Boards(1,0,0,0,0,0,0,0,0,0,0,0));
         for (int x = 0; x < loseBoards.size(); x++) {
             //loseBoards.get(x).printBoards();
         }
@@ -41,12 +41,12 @@ public class MyPlayer {
         System.out.println();
         System.out.println("win boards: ");
         for (int x = 0; x < winBoards.size(); x++) {
-            winBoards.get(x).printBoards();
+            //winBoards.get(x).printBoards();
         }
         System.out.println();
         System.out.println("lose boards: ");
         for (int x = 0; x < loseBoards.size(); x++) {
-            loseBoards.get(x).printBoards();
+            //loseBoards.get(x).printBoards();
         }
         System.out.println();
         boardWithRightMove();
@@ -807,10 +807,10 @@ public class MyPlayer {
                                                                 p=p-1;
                                                             }
                                                             Boards board = new Boards(a,y,w,v,u,t,s,r,q,p,0,0);
-                                                            board.printBoards();
+                                                            //board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
-                                                                    System.out.println("yay!");
+                                                                    //System.out.println("yay!");
                                                                     saysYay = true;
                                                                     Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d-board.column3,e-board.column4,f-board.column5,g-board.column6,h-board.column7,i-board.column8,j-board.column9,0,0);
                                                                     //System.out.println("sub =");
@@ -981,7 +981,7 @@ public class MyPlayer {
 
                                                     System.out.println();
                                                     Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
-                                                    b1.printBoardMove();
+                                                    //b1.printBoardMove();
                                                   //  System.out.print(" (" + col + "," + row + ")");
                                                    // System.out.println();
                                                 }
