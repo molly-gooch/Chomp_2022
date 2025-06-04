@@ -35,29 +35,29 @@ public class MyPlayer {
 
 //        allBoards();
         resultingBoards();
-        System.out.println();
-        System.out.println();
+        //System.out.println();
+        //System.out.println();
         //classifyBoards();
-        System.out.println();
-        System.out.println("win boards: ");
+        //System.out.println();
+        //System.out.println("win boards: ");
         for (int x = 0; x < winBoards.size(); x++) {
             //winBoards.get(x).printBoards();
         }
-        System.out.println();
-        System.out.println("lose boards: ");
+        //System.out.println();
+        //System.out.println("lose boards: ");
         for (int x = 0; x < loseBoards.size(); x++) {
             //loseBoards.get(x).printBoards();
         }
-        System.out.println();
+        //System.out.println();
         boardWithRightMove();
-        System.out.println();
+        //System.out.println();
 
     }
 
     public Point move(Chip[][] pBoard) {
 
-        System.out.println();
-        System.out.println("MyPlayer Move");
+        //System.out.println();
+        //System.out.println("MyPlayer Move");
 
 
         gameBoard = pBoard;
@@ -73,7 +73,7 @@ public class MyPlayer {
             }
         }
 
-
+        System.out.println("row: " +row + "col: " + column);
         /***
          * This code will run each time the "MyPlayer" button is pressed.
          * Add your code to return the row and the column of the chip you want to take.
@@ -136,26 +136,26 @@ public class MyPlayer {
     }
 
     public void resultingBoards() {
-        System.out.println("Resulting Boards: ");
-        System.out.println();
+        //System.out.println("Resulting Boards: ");
+        //System.out.println();
         for (int a = 1; a < 11; a++) {
-            for (int b = 0; b < 11; b++) {
-                for (int c = 0; c < 11; c++) {
-                    for (int d = 0; d < 11; d++) {
-                        for (int e = 0; e < 11; e++) {
-                            for (int f = 0; f < 11; f++) {
-                                for (int g = 0; g < 11; g++) {
-                                    for (int h = 0; h < 11; h++) {
-                                        for (int i = 0; i < 11; i++) {
-                                            for (int j = 0; j < 11; j++) {
-                                                if (a >= b && b >= c && c >= d && d >= e && e >= f && f >= g && g >= h && h >= i && i>=j) {
+            for (int b = 0; b <= a; b++) {
+                for (int c = 0; c <= b; c++) {
+                    for (int d = 0; d <= c; d++) {
+                        for (int e = 0; e <=d; e++) {
+                            for (int f = 0; f <=e; f++) {
+                                for (int g = 0; g <=f; g++) {
+                                    for (int h = 0; h <=g; h++) {
+                                        for (int i = 0; i <=h; i++) {
+                                            for (int j = 0; j <=i; j++) {
+
 
                                                     Boards startingBoard = new Boards(a,b,c,d,e,f,g,h,i,j,0,0);
-                                                    //System.out.println("Starting Board: " + a + ", " + b + ", " + c + ", " + d + ", " + e + ", " + f + ", " + g + ", " + h + ", " + i + ", " + j);
+                                                    System.out.println("Starting Board: " + a + ", " + b + ", " + c + ", " + d + ", " + e + ", " + f + ", " + g + ", " + h + ", " + i + ", " + j);
                                                     saysYay = false;
                                                     //System.out.println("Resulting Boards: ");
 
-                                                    System.out.println(loseBoards.size());
+                                                    //System.out.println(loseBoards.size());
 
                                                     int z = a;
                                                     int y = b;
@@ -173,11 +173,13 @@ public class MyPlayer {
                                                         if (j > 0 && p > 0) {
                                                             p = p - 1;
                                                             Boards board = new Boards(a,b,c,d,e,f,g,h,i,p,0,0);
-                                                            //board.printBoards();
+                                                          //  System.out.println("col 10");
+                                                          //  board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                    // System.out.println("yay!");
                                                                     saysYay = true;
+
                                                                     Boards subBoard = new Boards(a - board.column0, b - board.column1, c - board.column2,d - board.column3,e - board.column4,f - board.column5,g - board.column6,h - board.column7,i - board.column8,j - board.column9,0,0);
                                                                     //System.out.println("sub =");
                                                                     //subBoard.printBoards();
@@ -230,13 +232,18 @@ public class MyPlayer {
                                                     p= j;
 
                                                     for (int I = i; I > 0; I--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (j <= i && i > 0 && j >= 0 && p >= 0 && q > 0) {
                                                             q = q - 1;
                                                             if (q < p) {
                                                                 p = p - 1;
                                                             }
                                                             Boards board = new Boards(a,b,c,d,e,f,g,h,q,p,0,0);
-                                                            //board.printBoards();
+                                                           // System.out.println("col 9");
+
+                                                          //  board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     //System.out.println("yay!");
@@ -294,7 +301,11 @@ public class MyPlayer {
                                                     p = j;
                                                     q = i;
 
+
                                                     for (int H = h; H > 0; H--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (i <= h && h > 0 && j>=0 && p >= 0 && i >= 0 && q >= 0 && r > 0) {
                                                             r = r - 1;
                                                             if (r < q) {
@@ -304,7 +315,7 @@ public class MyPlayer {
                                                                 p = p - 1;
                                                             }
                                                             Boards board = new Boards(a,b,c,d,e,f,g,r,q,p,0,0);
-                                                            //board.printBoards();
+                                                           // board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     //System.out.println("yay!");
@@ -364,7 +375,11 @@ public class MyPlayer {
                                                     q = i;
                                                     r=h;
 
+
                                                     for (int G = g; G > 0; G--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (h <= g && g > 0 && j >= 0 && p >= 0 && i>=0 && q >= 0 && r >= 0 && h >= 0 && s>0) {
                                                             s = s - 1;
                                                             if (s < r) {
@@ -377,7 +392,7 @@ public class MyPlayer {
                                                                 p=p-1;
                                                             }
                                                             Boards board = new Boards(a,b,c,d,e,f,s,r,q,p,0,0);
-                                                            //board.printBoards();
+                                                           // board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     //System.out.println("yay!");
@@ -439,7 +454,12 @@ public class MyPlayer {
                                                     r=h;
                                                     s=g;
 
+
                                                     for (int F = f; F > 0; F--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
+                                                        //is this if right?
                                                         if (g <= f && f > 0 && j >= 0 && i>=0 && h>=0 && g>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>0) {
                                                             t = t - 1;
                                                             if (t < s) {
@@ -455,7 +475,7 @@ public class MyPlayer {
                                                                 p=p-1;
                                                             }
                                                             Boards board = new Boards(a,b,c,d,e,t,s,r,q,p,0,0);
-                                                            //board.printBoards();
+                                                            board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
                                                                 if (board.column0 == (loseBoards.get(x).column0) && board.column1 == (loseBoards.get(x).column1) && board.column2 == (loseBoards.get(x).column2) && board.column3==(loseBoards.get(x).column3) && board.column4==(loseBoards.get(x).column4) && board.column5==(loseBoards.get(x).column5) && board.column6==(loseBoards.get(x).column6) && board.column7==(loseBoards.get(x).column7) && board.column8 == (loseBoards.get(x).column8) && board.column9==(loseBoards.get(x).column9)){
                                                                     //System.out.println("yay!");
@@ -518,7 +538,11 @@ public class MyPlayer {
                                                     s=g;
                                                     t=f;
 
+
                                                     for (int E = e; E > 0; E--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (f <= e && e > 0 && j>=0 && i>=0 && h>=0 && g>=0 &&f>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>0) {
                                                             u = u - 1;
                                                             if(u<t){
@@ -536,6 +560,7 @@ public class MyPlayer {
                                                             if(q<p){
                                                                 p=p-1;
                                                             }
+
                                                             Boards board = new Boards(a,b,c,d,u,t,s,r,q,p,0,0);
                                                             //board.printBoards();
                                                             for (int x = 0; x < loseBoards.size(); x++) {
@@ -601,7 +626,11 @@ public class MyPlayer {
                                                     t=f;
                                                     u =e;
 
+
                                                     for (int D = d; D > 0; D--) {
+                                                        if (saysYay = true){
+                                                            break;
+                                                        }
                                                         if (e <= d && d > 0 && j>=0 && i>=0 && h>=0 && g>=0 && f>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>0) {
                                                             v = v - 1;
                                                             if(v<u){
@@ -688,7 +717,12 @@ public class MyPlayer {
                                                     u =e;
                                                     v=d;
 
+
+
                                                     for (int C = c; C > 0; C--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (d <= c && c > 0 && j>=0 && i>=0 && h>=0 && g>=0 && f>=0 && e>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>0) {
                                                             w = w - 1;
                                                             if(w<v){
@@ -780,6 +814,9 @@ public class MyPlayer {
                                                     w=c;
 
                                                     for (int B = b; B > 0; B--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (c <= b && b > 0 && j>=0 && i>=0 && h>=0 && g>=0 && f>=0 && e>=0 && d>=0&& q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>=0 && y>0) {
                                                             y = y - 1;
                                                             if(y<w){
@@ -873,7 +910,11 @@ public class MyPlayer {
                                                     w=c;
                                                     y=b;
 
+
                                                     for (int A = a; A > 0; A--) {
+                                                        if (saysYay == true){
+                                                            break;
+                                                        }
                                                         if (b <= a && a > 0 && j>=0 && i>=0 && h>=0 && g>=0 && f>=0 && e>=0 && d>=0&& c>=0 && q >= 0 && p >= 0 && r >= 0 && s>=0 && t>=0 && u>=0 && v>=0 && w>=0 && y>=0 && z>0) {
                                                             z = z - 1;
                                                             if(z<y){
@@ -962,6 +1003,7 @@ public class MyPlayer {
                                                     }
 
 
+
                                                     if (saysYay == true) {
                                                         Boards b1= new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                         b1.win = true;
@@ -970,7 +1012,8 @@ public class MyPlayer {
                                                     } else {
                                                         Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                         b1.win = false;
-
+                                                        row = 0;
+                                                        col = 0;
                                                         loseBoards.add(b1);
                                                     }
 
@@ -979,8 +1022,8 @@ public class MyPlayer {
 
                                                     withMoves.add(startingBoard);
 
-                                                    System.out.println();
-                                                    Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
+                                                    //System.out.println();
+                                                   // Boards b1 = new Boards(a,b,c,d,e,f,g,h,i,j,row,col);
                                                     //b1.printBoardMove();
                                                   //  System.out.print(" (" + col + "," + row + ")");
                                                    // System.out.println();
@@ -995,11 +1038,11 @@ public class MyPlayer {
                 }
             }
         }
-    }
+
 
     public void boardWithRightMove(){
         for(int x=0;x<withMoves.size();x++){
             //withMoves.get(x).printBoardMove();
         }
     }
-}
+    }
